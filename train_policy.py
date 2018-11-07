@@ -1,13 +1,14 @@
 ﻿import numpy as np
 import chainer
-from chainer import cuda, Variable
+from chainer.backends import cuda 
+from chainer import Variable
 from chainer import optimizers, serializers
 import chainer.functions as F
 
-from pydlshogi.common import *
+from pydlshogi.common import MOVE_DIRECTION
 from pydlshogi.network.policy import PolicyNetwork
-from pydlshogi.features import *
-from pydlshogi.read_kifu import *
+from pydlshogi.features import make_features
+from pydlshogi.read_kifu import read_kifu
 
 import argparse
 import random
@@ -36,6 +37,7 @@ logging.basicConfig(format='%(asctime)s\t%(levelname)s\t%(message)s', datefmt='%
 
 model = PolicyNetwork()
 model.to_gpu()
+xp = cuda.cupy
 
 optimizer = optimizers.SGD(lr=args.lr)
 optimizer.setup(model)
@@ -87,23 +89,23 @@ def mini_batch(positions, i, batchsize):
     mini_batch_data = []
     mini_batch_move = []
     for b in range(batchsize):
-        features, move, win = make_features(positions[i + b])
+        features, move, _ = make_features(positions[i + b])
         mini_batch_data.append(features)
         mini_batch_move.append(move)
 
-    return (Variable(cuda.to_gpu(np.array(mini_batch_data, dtype=np.float32))),
-            Variable(cuda.to_gpu(np.array(mini_batch_move, dtype=np.int32))))
+    return (Variable(xp.array(mini_batch_data, dtype=xp.float32)),
+            Variable(xp.array(mini_batch_move, dtype=xp.int32)))
 
 def mini_batch_for_test(positions, batchsize):
     mini_batch_data = []
     mini_batch_move = []
-    for b in range(batchsize):
-        features, move, win = make_features(random.choice(positions))
+    for _ in range(batchsize):
+        features, move, _ = make_features(random.choice(positions))
         mini_batch_data.append(features)
         mini_batch_move.append(move)
 
-    return (Variable(cuda.to_gpu(np.array(mini_batch_data, dtype=np.float32))),
-            Variable(cuda.to_gpu(np.array(mini_batch_move, dtype=np.int32))))
+    return (Variable(xp.array(mini_batch_data, dtype=xp.float32)),
+            Variable(xp.array(mini_batch_move, dtype=xp.int32)))
 
 # train
 logging.info('start training')
