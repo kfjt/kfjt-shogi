@@ -26,4 +26,4 @@ clone [github.com/TadaoYamaoka/python-dlshogi](https://github.com/TadaoYamaoka/p
 
 #### エンジン設定
 
-+ model_policy
++ [model_policy](https://github.com/kfjt/kfjt-shogi/releases)
