@@ -1,10 +1,10 @@
 # kfjt-shogi
 
-clone https://github.com/TadaoYamaoka/python-dlshogi
+clone [github.com/TadaoYamaoka/python-dlshogi](https://github.com/TadaoYamaoka/python-dlshogi)
 
 ## train
 
-+ [http://wdoor.c.u-tokyo.ac.jp/shogi/](http://wdoor.c.u-tokyo.ac.jp/shogi/)
++ [wdoor.c.u-tokyo.ac.jp/shogi](http://wdoor.c.u-tokyo.ac.jp/shogi/)
   + year: 2018
   + rate: 3800
   + moves: 150
