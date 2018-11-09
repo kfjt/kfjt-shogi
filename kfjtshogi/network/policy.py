@@ -2,7 +2,7 @@
 import chainer.functions as F
 import chainer.links as L
 
-from pydlshogi.common import *
+from kfjtshogi.common import *
 
 ch = 192
 class PolicyNetwork(Chain):

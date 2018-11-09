@@ -2,7 +2,7 @@
 import shogi
 import copy
 
-from pydlshogi.common import *
+from kfjtshogi.common import *
 
 def make_input_features(piece_bb, occupied, pieces_in_hand):
     features = []

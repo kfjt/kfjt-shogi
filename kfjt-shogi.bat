@@ -1,1 +1,1 @@
-@python -m pydlshogi.usi.usi_kfjt_player
+@python -m kfjtshogi.usi.usi_kfjt_player

@@ -2,7 +2,7 @@
 import shogi.CSA
 import copy
 
-from pydlshogi.features import make_output_label, bb_rotate_180
+from kfjtshogi.features import make_output_label, bb_rotate_180
 
 # read kifu
 def read_kifu(kifu_list_file):

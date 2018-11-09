@@ -7,10 +7,10 @@ import chainer.functions as F
 
 import shogi
 
-from pydlshogi.common import *
-from pydlshogi.features import *
-from pydlshogi.network.policy import *
-from pydlshogi.player.base_player import *
+from kfjtshogi.common import *
+from kfjtshogi.features import *
+from kfjtshogi.network.policy import *
+from kfjtshogi.player.base_player import *
 
 from random import choice
 from heapq import nlargest

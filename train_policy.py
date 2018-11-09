@@ -5,10 +5,10 @@ from chainer import Variable
 from chainer import optimizers, serializers
 import chainer.functions as F
 
-from pydlshogi.common import MOVE_DIRECTION
-from pydlshogi.network.policy import PolicyNetwork
-from pydlshogi.features import make_features
-from pydlshogi.read_kifu import read_kifu
+from kfjtshogi.common import MOVE_DIRECTION
+from kfjtshogi.network.policy import PolicyNetwork
+from kfjtshogi.features import make_features
+from kfjtshogi.read_kifu import read_kifu
 
 import argparse
 import random

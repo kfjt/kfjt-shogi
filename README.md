@@ -8,7 +8,7 @@ clone [github.com/TadaoYamaoka/python-dlshogi](https://github.com/TadaoYamaoka/p
   + year: 2018
   + rate: 3800
   + moves: 150
-+ pydlshogi.network.policy.PolicyNetwork
++ kfjtshogi.network.policy.PolicyNetwork
 
 ## player
 
