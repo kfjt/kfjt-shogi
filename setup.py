@@ -6,4 +6,9 @@ setuptools.setup(
     author = '',
     packages = ['kfjtshogi'],
     scripts = [],
+    install_requires = [
+        'python-shogi',
+        'numpy',
+        'chainer',
+    ],
 )
