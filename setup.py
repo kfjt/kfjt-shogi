@@ -2,7 +2,7 @@
 
 setuptools.setup(
     name = 'kfjt-shogi',
-    version = '0.0.1',
+    version = '1.1',
     author = '',
     packages = ['kfjtshogi'],
     scripts = [],
